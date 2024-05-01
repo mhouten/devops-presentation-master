@@ -1,0 +1,34 @@
+image: ebits/openshift-client
+
+stages:
+  - deployToOpenShift
+
+variables:
+  OPENSHIFT_SERVER: https://openshift.ext.cetic.be:8443
+  OPENSHIFT_DOMAIN: openshift.ext.cetic.be
+  # Configure this variable in Secure Variables:
+  # OPENSHIFT_TOKEN: my.openshift.token  
+  
+.deploy: &deploy
+  before_script:
+    - oc login "$OPENSHIFT_SERVER" --token="$OPENSHIFT_TOKEN" --insecure-skip-tls-verify
+    - oc project "devops-slides"
+  script:
+    - "oc get services $APP 2> /dev/null || oc new-app openshift/nodejs:6~. --name=$APP"
+    - "oc start-build $APP --from-dir=. --follow || sleep 3s"
+    - "oc get routes $APP 2> /dev/null || oc expose service $APP --hostname=$APP_HOST || oc expose service $APP --name=devops-slides-public --hostname=$APP_HOST2"
+
+develop:
+  <<: *deploy
+  stage: deployToOpenShift
+  tags:
+    - docker
+  variables:
+    APP: devops-slides
+    APP_HOST: devops-presentation.$OPENSHIFT_DOMAIN
+    APP_HOST: devops-presentation.openshift.cetic.be
+  environment:
+    name: develop
+    url: http://devops-presentation.$OPENSHIFT_DOMAIN
+  except:
+    - master

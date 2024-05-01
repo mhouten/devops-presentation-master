@@ -1,0 +1,96 @@
+/* Enhanced Zenburn style - based on the original Zenburn theme with modern CSS practices */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  line-height: 1.5;
+  size-adjust: 100%;
+}
+
+/* Keyword styles for programming constructs and important identifiers */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #e3ceab;
+}
+
+/* For template tags in templating languages */
+.hljs-template-tag {
+  color: #dcdcdc;
+}
+
+/* Number formatting in code, such as integers and floating points */
+.hljs-number {
+  color: #8cd0d3;
+}
+
+/* Variables and attributes, significant in distinguishing values in code */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #efdcbc;
+}
+
+/* Literals like true, false, null in programming languages */
+.hljs-literal {
+  color: #efefaf;
+}
+
+/* Substitution markers within template strings or similar syntax */
+.hljs-subst {
+  color: #8f8f8f;
+}
+
+/* Titles in markup or programming contexts, including classes and IDs in HTML/CSS */
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #efef8f;
+}
+
+/* For symbols, bullets in lists, and hyperlinks */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dca3a3;
+}
+
+/* Styles for deletions or diff outputs */
+.hljs-deletion {
+  color: #cc9393;
+}
+
+/* Strings - typically values in quotations */
+.hljs-string {
+  color: #cc9393;
+}
+
+/* Built-in names and tags in languages */
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #cc9393;
+}
+
+/* Additions in diffs, comments, and metadata in code */
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #7f9f7f;
+}
+
+/* For emphasized text, commonly italicized */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* For strong importance, typically bold */
+.hljs-strong {
+  font-weight: bold;
+}

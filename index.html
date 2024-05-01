@@ -1,0 +1,810 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>ADA - DevOps</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/cetic.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="homepage" data-background-image="img/background-homepage.png" data-background-size="contain">
+					<h1>Introduction to DevOps<h1/>
+					<h3>ADA - Group</h3>
+					<i> <small> ada@asredanesh.com </small> </i>
+				</section>
+				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<script type="text/template">
+						###Who am I?
+						<img class="plain" width=auto height=auto data-src="img/who.jpg" />
+						* ADA - Group
+						* DevOps Engineer - Cloud Computing @asredanesh.com
+					</script>
+				</section>
+				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<script type="text/template">
+						###Where I work?
+						<img class="plain" width=70% height=auto data-src="img/ceticbusiness.jpg" />
+					</script>
+				</section>
+				<section>
+				    <section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### DevOps Origins
+							
+							<img class="plain" width=35% height=auto data-src="img/devcycle.jpg" />	<img class="plain" width=40% height=auto data-src="img/flows.jpg" />
+							
+							<!--* Everything needs software nowadays.-->
+							<!--* Software has to run on a server to become a service.-->
+							<!--* Delivering a service from inception to its users is too slow and errorprone.-->
+							<!--* There are internal friction points that make this the case.-->
+							<!--* This loses you money. (delay = loss)-->
+							<!--* IT is frequently the bottleneck in the transition of “concept to cash. -->
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### DevOps Origins
+							
+							<img class="plain" width=auto height=auto data-src="img/release-frequency.jpg" />
+							
+							<b>Need to reduce the deployment time</b>
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### DevOps Origins
+							
+							Pet vs Cattle
+							
+							<img class="plain" width=40% height=auto data-src="img/pet.jpg" />	
+							
+							* Unique server, named, known and cared
+							* Sick, we treat it
+							* Damaged, it is repaired
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### DevOps Origins
+							
+							Pet vs Cattle
+							
+							<img class="plain" width=40% height=auto data-src="img/cattle.jpg" />	
+							
+							* No longer control infrastructure (Cloud / Virtualization)
+							* More complex software deployments
+							* More and more restrictive SLAs	
+
+							<b>Need to automate the deployment</b>			
+
+							<!--* Defects are released into production, causing outages-->
+							<!--* Inability to diagnose production issues quickly-->
+							<!--* Problems appear in some environments only-->
+							<!--* Blame shifting/finger pointing-->
+							<!--* Long delays while dev, QA, or another team waits on resource or response from other teams-->
+							<!--* “Manual error” is a commonly cited root cause-->
+							<!--* Releases slip/fail-->
+							<!--* Quality of life issues in IT-->	
+						</script>
+					</section>
+				</section>
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## What is DevOps? 
+					
+							> DevOps is the practice of operations and development engineers participating together in the entire service lifecycle, from design through the development process to production support. 
+							
+							https://theagileadmin.com/what-is-devops/
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## What is DevOps? 
+							
+							> DevOps is also characterized by operations staff making use many of the same techniques as developers for their systems work. 
+							
+							https://theagileadmin.com/what-is-devops/
+							
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### The idea: adding OPS to the DEV team
+							
+							<img class="plain" width=25% height=auto data-src="img/devopsproblem.jpg" />
+							
+							<img class="plain" width=70% height=auto data-src="img/devops0.png" />
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### The idea: adding OPS to the DEV team
+							
+							<img class="plain" width=70% height=auto data-src="img/devops1.png" />
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							### The idea: adding OPS to the DEV team
+							
+							<img class="plain" width=70% height=auto data-src="img/devops3.png" />
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## DevOps core: CAMS
+							
+							<img class="plain" width=auto height=auto data-src="img/cams.jpg" />
+							
+							<b>Culture</b> – People > Process > Tools
+							
+							<b>Automation</b> – Infrastructure as Code
+							
+							<b>Measurement</b> – Measure Everything
+							
+							<b>Sharing</b> – Collaboration/Feedback					
+							
+							http://devopsdictionary.com/wiki/CAMS
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## DevOps: the three Pillars
+							
+							1 - <b>Continuous Delivery</b>  – build, test, deploy your apps in a fast and automated manner.
+							
+							2 - <b>Infrastructure Automation</b> – create your systems, OS configs, and app deployments as code.
+							
+							3 - <b>Reliability Engineering</b> – operate your systems; monitoring and orchestration, sure, but also designing for operability in the first place.
+							
+							<img class="plain" width=40% height=auto data-src="img/devops-loop.png" />
+							
+							https://theagileadmin.com/what-is-devops/
+						</script>
+					</section>
+				</section>
+				
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## DevOps Tooling
+					
+							<img class="plain" width=80% height=auto data-src="img/devops-tools.png" />
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							<img class="plain" width=75% height=auto data-src="img/landscape.png" />
+							
+							https://landscape.cncf.io/
+							
+						</script>
+					</section>	
+				</section>
+				<section>
+				    <section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## DevOps: the three Pillars
+							
+							1 - <b>Continuous Delivery</b>  – build, test, deploy your apps in a fast and automated manner.
+							
+							<span style="color:grey">2 - Infrastructure Automation – create your systems, OS configs, and app deployments as code.</span>
+							
+							<span style="color:grey">3 - Reliability Engineering – operate your systems; monitoring and orchestration, sure, but also designing for operability in the first place.</span>
+							
+							<img class="plain" width=40% height=auto data-src="img/devops-loop-1.png" />
+							
+							https://theagileadmin.com/what-is-devops/
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Continuous Delivery
+							
+							<img class="plain" width=40% height=auto data-src="img/devops-loop-1.png" />
+					
+							* Integration (CI): Build and Test
+							* Deployment/Delivery (CD): Deploy and validation
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Best pratices
+							
+							### WORKING SOFTWARE, ALL THE TIME
+							
+							* Builds should pass the coffee test (< 5 minutes)
+							* Commit really small bits
+							* Don’t leave the build broken
+							* Choose a development flow (git flow, ...)
+							* The build should return at least: a status, a log, and an artifact						
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## How it works?
+							
+							### THE CD PIPELINE
+							
+							* Only build artifacts once
+							* Artifacts should be immutable
+							* Deployment should go to a copy of production before going into production
+							* Stop deploys if it a previous step fails
+							* Deployments should be idempotent							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## CI/CD tooling
+							* Version Control (Git, others, doesn’t matter as long as you use it)
+							* CI System (Jenkins, Gitlab CI, CircleCI, Travis, ...)
+							* Build (whatever your platform needs - Make/rake, Maven, Gulp, Packer)
+							* Test (*unit, Robot/Protractor, Cucumber)
+							* Artifact Repository (Artifactory, Nexus, Docker repository, ...)
+							* Deployment (Ansible, your CM system)					
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+								### Gitlab CI
+								<!-- * GitLab offers a continuous integration (CI) service ~ Gitlab CI. (Jenkins / Travis equivalent) -->
+								<!-- * Its goal in the development timelive is to reduce the time needed for developers to see if something went wrong.  -->
+								<img class="plain" data-src="img/gitlab-pipeline.png" />
+								<!-- * Most projects use this service to run the test suite so that developers get immediate feedback if they broke something. -->
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+								### .gitlab-ci.yml file
+								* By adding a .gitlab-ci.yml file to the root directory of your repository and configuring your GitLab project to use a Runner, then each commit or push, triggers your CI pipeline.
+								
+								* By default it runs a pipeline with three stages: <b> build</b>, <b> test</b>, and <b> deploy</b>.
+
+								<!-- * The .gitlab-ci.yml file tells the GitLab runner what to do. -->
+								
+								<!-- * If everything runs OK, you'll get a nice green checkmark associated with the commit. This makes it easy to see whether a commit caused any of the tests to fail before you even look at the code. -->
+
+								<!-- * There's a growing trend to use continuous delivery and continuous deployment to automatically deploy tested code to staging and production environments. -->
+
+								<!-- * Gitlab CI is going to be a center-piece for Continuous Integration (~as a Jenkins can do), it has become a popular framework for building Continuous Delivery pipelines that not only builds and tests the code changes but also pushes the change through various steps. -->
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+								### .gitlab-ci.yml file
+								<img class="plain" width=65% height=auto data-src="img/gitlab-ci.png" />
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+								### Gitlab Status
+								<img class="plain" width=80% height=auto data-src="img/gitlab-status.png" />
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+								### Jenkins
+								<img class="plain" width=80% height=auto data-src="img/jenkins-ui.png" />
+						</script>
+					</section>
+				</section>
+				<section>
+				    <section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## DevOps: the three Pillars
+							
+							<span style="color:grey"> 1 - Continuous Delivery  – build, test, deploy your apps in a fast and automated manner.</span>
+							
+							2 - <b>Infrastructure Automation</b> – create your systems, OS configs, and app deployments as code.
+							
+							<span style="color:grey"> 3 - Reliability Engineering – operate your systems; monitoring and orchestration, sure, but also designing for operability in the first place.</span>
+							
+							<img class="plain" width=40% height=auto data-src="img/devops-loop-2.png" />
+							
+							https://theagileadmin.com/what-is-devops/
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Infrastructure Automation
+							
+							<img class="plain" width=40% height=auto data-src="img/devops-loop-2.png" />
+					
+							* Provisioning - Terraform, AWS Cloudformation, The Foreman, Digital Rebar, AWX, ...
+							* Configuration Management - Ansible, Puppet, Chef, Salt, ...
+							* Integration Testing (Validation) - Rspec, Serverspec
+							* Orchestration - Rundeck, Ansible, Kubernetes (for Docker)
+							
+							<small><i>Source: DELAET, Thomas, JOOSEN, Wouter, et VANBRABANT, Bart. A survey of system configuration tools. In : Proceedings of the 23rd Large Installations Systems Administration (LISA) conference. Usenix association, 2010. p. 1-14.</i></small>
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Infrastructure Automation
+							
+							<img class="plain" width=20% height=auto data-src="img/terraform.png" />
+							* infrastructure as code software by HashiCorp.
+							* allows to define a datacenter infrastructure.
+							* execution plan to build the infrastructure
+								* OpenStack (Private)
+								* service provider (Public) such as AWS, Microsoft Azure, Google Cloud Platform, ...
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Terraform
+						
+						
+						provider "aws" {
+						  access_key = "ACCESS_KEY_HERE"
+						  secret_key = "SECRET_KEY_HERE"
+						  region     = "us-east-1"
+						}
+
+						resource "aws_instance" "example" {
+						  ami           = "ami-2757f631"
+						  instance_type = "t2.micro"
+						}
+													
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Terraform
+						
+						
+						$ terraform apply
+						# ...
+
+						+ aws_instance.example
+						ami:                      "ami-2757f631"
+						availability_zone:        "<computed>"
+						ebs_block_device.#:       "<computed>"
+						ephemeral_block_device.#: "<computed>"
+						instance_state:           "<computed>"
+						instance_type:            "t2.micro"
+						key_name:                 "<computed>"
+						placement_group:          "<computed>"
+						private_dns:              "<computed>"
+						private_ip:               "<computed>"
+						public_dns:               "<computed>"
+						public_ip:                "<computed>"
+						root_block_device.#:      "<computed>"
+						security_groups.#:        "<computed>"
+						source_dest_check:        "true"
+						subnet_id:                "<computed>"
+						tenancy:                  "<computed>"
+						vpc_security_group_ids.#: "<computed>"
+						#...
+						
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Terraform
+						
+						# ...
+						aws_instance.example: Creating...
+						ami:                      "" => "ami-2757f631"
+						instance_type:            "" => "t2.micro"
+						[...]
+
+						aws_instance.example: Still creating... (10s elapsed)
+						aws_instance.example: Creation complete
+
+						Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+						# ...
+						
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Configuration Management
+							> "Software configuration management (SCM) is the discipline of managing the evolution of large and complex software systems"
+
+							[Tichy 1988]
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Configuration management: Ansible
+							
+							<img class="plain" width=20% height=auto data-src="img/ansible.png" />
+							
+							Automates: software provisioning, configuration management and application deployment. (via SSH)
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Configuration management: Ansible Playbook
+							
+							```
+							---
+							- hosts: webservers
+							  vars:
+								http_port: 80
+								max_clients: 200
+							  remote_user: root
+							  tasks:
+							  - name: ensure apache is at the latest version
+								yum:
+								  name: httpd
+								  state: latest
+							  - name: write the apache config file
+								template:
+								  src: /srv/httpd.j2
+								  dest: /etc/httpd.conf
+								notify:
+								- restart apache
+							  - name: ensure apache is running
+								service:
+								  name: httpd
+								  state: started
+							  handlers:
+								- name: restart apache
+								  service:
+									name: httpd
+									state: restarted
+							```
+						</script>
+					</section>	
+				</section>
+				<section>
+				    <section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## DevOps: the three Pillars
+							
+							<span style="color:grey"> 1 - Continuous Delivery  – build, test, deploy your apps in a fast and automated manner.</span>
+							
+							<span style="color:grey"> 2 - Infrastructure Automation – create your systems, OS configs, and app deployments as code.</span>
+							
+							3 - <b>Reliability Engineering</b> – operate your systems; monitoring and orchestration, sure, but also designing for operability in the first place.
+							
+							https://theagileadmin.com/what-is-devops/
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Reliability Engineering
+					
+							<b> DESIGN FOR OPERATION </b>
+							* Design patterns exist for creating resilient systems.
+							* If your app sucks, there’s only so much an ops team can do about it once it’s deployed.
+							* Devs need to take responsibility for their app through deployment.
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Reliability Engineering
+							
+							<b> OPERATE FOR DESIGN </b>
+
+							* Don’t do tasks for people. Build tools so they can do their own work. Ops is now a dev team and the platform is their product.
+							* Automate. This means code, and using coder practices (from source control on)
+							* Build Feedback Paths Back To Dev From Production
+							* Monitoring and metrics - Ensure that monitoring/logging/metrics feed back into dev (and the business)
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Reliability Engineering: Best pratices
+							
+							Enhance Service Design With Operational Knowledge
+							* Reliability
+							* Performance
+							* Security
+							* Design Patterns ([Release It!](https://pragprog.com/book/mnee/release-it), [12-factor apps](https://12factor.net/))
+							
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Reliability Engineering: Best pratices
+							
+							Foster a Culture of Responsibility
+							* Whether your code passes test, gets deployed, and stays up for users is your responsibility	
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Reliability Engineering: Best pratices
+							
+							Make Development Better With Ops
+							* Productionlike environments
+							* Power tooling - Vagrant, etc.			
+						
+						</script>
+					</section>						
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Tool: Vagrant
+							
+							* open-source software product for building and maintaining portable virtual software development environments,
+							* e.g. for VirtualBox
+
+							```
+							$ vagrant init hashicorp/precise64
+							
+							$ vagrant up Bringing machine 'default' up with 'virtualbox' provider... 
+							==> default: Importing base box 'hashicorp/precise64'... 
+							==> default: Forwarding ports...
+							default: 22 (guest) => 2222 (host) (adapter 1) 
+							==> default: Waiting for machine to boot... 
+
+							$ vagrant ssh 
+							vagrant@precise64:~$ _
+							```						
+						</script>
+					</section>	
+										<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Vagrant File
+
+							```
+							Vagrant.configure("2") do |config|
+							  config.vm.box = "hashicorp/precise64"
+							  config.vm.provision :shell, path: "bootstrap.sh"
+							  config.vm.network :forwarded_port, guest: 80, host: 4567
+							end
+							```
+
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Vagrant Example
+							
+							<img src=https://adamcod.es/img/posts/vagrant-ansible-lamp.gif width=40%>
+							
+						</script>
+					</section>	
+				</section>
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Conclusion
+					
+							* Need to automate deployments (and everything!)
+							* Develop infrastructure code
+							* Apply Software Engineering methods to the infrastructure code
+							* Vagrant: Local Env (for deployment testing and programming)
+							* Ansible: install software and configure OS 
+							* Terraform: infrastructure automation
+							* Gitlab CI: CI/CD process
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Conclusion
+					
+							#### Benefits
+
+							* Best knowledges in deployment procedures
+							* Shared meeting between DEV and OPS
+
+							* Reduction of regression / time between the bug fix and the production / risks
+							* smaller/regular releases
+							* Deployment automation
+							
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Conclusion
+							
+							#### Difficulties
+
+							* Job update: OPS => DEV-OPS <= DEV
+							* New langages, tools to learn
+						</script>
+					</section>
+				</section>
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+						    ## References and further reading
+						    
+						    * [Release It!](https://pragprog.com/book/mnee/release-it)
+						    * [12-factor apps](https://12factor.net/)
+						    * [The DevOps Phenomenon - An executive crash course](https://queue.acm.org/detail.cfm?id=3338532)
+                        </script>
+                    </section>
+                </section>
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							
+							## Cloud Reseach Internships
+					
+							Analyse comparative d’outils permettant de tester le déploiement automatisé.
+							
+							Stratégies pour tester des scripts de déploiement et de configuration automatisée sur différents systèmes d’exploitation.
+							
+							Déploiement et utilisation d’un outil de gestion de serveurs, d’installation et de configuration d’applications.
+							
+							Mise en oeuvre d’un portail captif.
+							
+							Transformation d’un modèle en scripts Ansible pour le déploiement automatisé d’applications.
+							
+							Modélisation d’un manifeste de déploiement à base du standard TOSCA pour le déploiement automatisé d’applications.
+							
+							#### https://www.cetic.be/Stages
+							
+						</script>
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Big Data Internships
+							
+							Outil d'extraction d'informations pour les publications scientifiques
+							
+							Système de recommandation pour les références bibliographiques
+							
+							Interface visuelle pour des frameworks de machine learning 
+							
+							#### https://www.cetic.be/Stages
+							
+						</script>
+					</section>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							## Jobs
+							
+							Ingénieur(e) de Recherche dans les architectures et infrastructures scalables
+							
+							Ingénieur(e) de Recherche dans la gestion et l’analyse de données
+							
+							#### https://www.cetic.be/Offres-d-emploi
+							
+						</script>
+					</section>
+				</section>
+				<section class="lastpage" data-background-image="img/background-lastpage.png">
+					<table>
+						<tr>
+							<td style="width: 50%; text-align: center;">
+								<a href="https://www.cetic.be" /><img class="plain" data-src="img/logo-cetic.png" /></a><br /><br />
+								<small>Aéropole de Charleroi-Gosselies <br />
+								Avenue Jean Mermoz 28 <br />
+								B-6041 Charleroi - Belgique <br /></small>
+								<p><iframe width="640" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" data-src="http://www.openstreetmap.org/export/embed.html?bbox=4.473830759525299%2C50.47422046442369%2C4.477371275424957%2C50.475966719544715&amp;layer=mapnik" style="border: 1px solid black"></iframe></p>
+								<table>
+									<tr>
+										<td rowspan="2"><img class="plain" data-src="img/icon-twitter.png" /></td>
+										<td>
+											<a href="twitter.com/@CETIC">
+												twitter.com/@CETIC
+												<img class="plain" style="margin: 0 5px" data-src="img/icon-flag-french.png" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="https://www.twitter.com/@CETIC_be">
+												twitter.com/@CETIC_be
+												<img class="plain" style="margin: 0px 5px" data-src="img/icon-flag-english.png" />
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img class="plain" data-src="img/icon-linkedin.png" />
+										</td>
+										<td>
+											<a href="https://www.linkedin.com/company/cetic">
+												linkedin.com/company/cetic
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img class="plain" data-src="img/icon-mail.png" />
+										</td>
+										<td>
+											<a href="mailto:info@cetic.be">
+												info@cetic.be
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img class="plain" data-src="img/icon-phone.png" />
+										</td>
+										<td>
+											+32 71 490 700
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="text-align: center">
+								<h2>Introduction to DevOps</h2>
+								<br />
+								<br />
+								<br />
+								<table style="width: 100%">
+									<tr>
+										<td style="text-align: center"><h3>ADA - Group</h3></td>
+									</tr>
+									<tr>
+										<td style="text-align: center"><h4>Research Engineer</h4></td>
+									</tr>
+									<tr>
+										<td style="text-align: center">alexandre.nuttinck@cetic.be</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</section>
+				
+				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<script type="text/template">
+							<img class="plain" data-src="img/pizzaservice.jpg" />
+						</script>
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				slideNumber: true,
+				width: "100%",
+				height: "100%",
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
